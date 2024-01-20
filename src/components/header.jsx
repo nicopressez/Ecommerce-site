@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import githubLogo from '../assets/images/github.png';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -14,11 +15,20 @@ const Header = () => {
         <nav className="text-center mt-0 pt-0">
         <ul className=" mt-0 flex justify-center text-white font-futura gap-7 text-xs" >
             <li className=" mt-0">
-                Home</li>
+            <Link to="/">
+                Home
+            </Link>
+                </li>
             <li className="mt-0">
-                Men</li>
+            <Link to="/men">
+                Men
+            </Link>
+            </li>
             <li className="mt-0">
-                Women</li>
+            <Link to="/women">
+                Women
+            </Link>
+                </li>
             <li className="mt-0">
                 About</li>
             </ul>
