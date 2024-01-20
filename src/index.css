@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Viola";
+  src: url(./assets/fonts/VIOLA.ttf);
+}
+
+@font-face {
+  font-family: "FuturaTSNew";
+  src: url(./assets/fonts/FuturaTSNew.ttf);
+}
+
+@font-face {
+  font-family: "FuturaTSNewBold";
+  src: url(./assets/fonts/FuturaTSNewBold.ttf);
+}
+
+@font-face {
+  font-family: "FuturaTSNewMedium";
+  src: url(./assets/fonts/FuturaTSNewMedium.ttf);
+}
