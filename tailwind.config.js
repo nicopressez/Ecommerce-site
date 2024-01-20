@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        '200': '50rem',
+      }
+    },
     fontFamily: {
       viola: ["Viola", "sans-serif"],
       futura: ["FuturaTSNew", "sans-serif"],

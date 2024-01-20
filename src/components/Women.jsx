@@ -1,9 +1,11 @@
-
+import womenImg from '../assets/images/womensTop.jpg'
+import ShopTop from './ShopTop'
 
 const Women = () => {
     return (
         <div>
-            <h2>Woemn</h2></div>
+            <ShopTop image={womenImg} />
+            </div>
         
     )
 }
