@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <header className="bg-gradient-to-b from-black/75 fixed w-screen h-24 z-10 
         transition-colors duration-500 hover:bg-black">
-        <h1 className=" drop-shadow-xl text-4xl font-viola font-medium text-center text-white mt-2 tracking-widest
+        <h1 className=" drop-shadow-xl text-4xl font-viola font-bold text-center text-white mt-2 tracking-widest
          mb-0">
             Brand
         </h1>
