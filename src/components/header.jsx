@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import githubLogo from '../assets/images/github.png';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const Header = () => {
@@ -15,19 +15,34 @@ const Header = () => {
         <nav className="text-center mt-0 pt-0">
         <ul className=" mt-0 flex justify-center text-white font-futura gap-7 text-xs" >
             <li className=" mt-0">
-            <Link to="/">
+            <NavLink to="/"
+            style={({isActive}) => {
+                return {
+                    fontWeight: isActive? "bold" : ""
+                }
+            }}>
                 Home
-            </Link>
+            </NavLink>
                 </li>
             <li className="mt-0">
-            <Link to="/men">
+            <NavLink to="/men"
+            style={({isActive}) => {
+                return {
+                    fontWeight: isActive? "bold" : ""
+                }
+            }}>
                 Men
-            </Link>
+            </NavLink>
             </li>
             <li className="mt-0">
-            <Link to="/women">
+            <NavLink to="/women"
+            style={({isActive}) => {
+                return {
+                    fontWeight: isActive? "bold" : ""
+                }
+            }}>
                 Women
-            </Link>
+            </NavLink>
                 </li>
             <li className="mt-0">
                 About</li>

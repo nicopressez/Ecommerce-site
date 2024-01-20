@@ -1,6 +1,4 @@
-import Header from "./header"
 import backgroundVideo from '../assets/videos/backgroundVideo.mp4'
-import { Link } from "react-router-dom"
 
 const Homepage = () => {
     return (

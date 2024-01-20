@@ -6,14 +6,13 @@ import Homepage from './components/Homepage.jsx'
 import Men from './components/Men.jsx'
 import Women from './components/Women.jsx'
 import App from './App.jsx'
-import Layout from './components/Layout.jsx'
 
 const Router = () => {
     const router = createBrowserRouter ([
   
     {
       path: "/",
-      element: <Layout />,
+      element: <App />,
       children: [{
         index:true,
         element: <Homepage />
