@@ -3,7 +3,7 @@ import Header from "./header"
 function  Men() {
     return (
 <div>
-    <Header />
+    
 </div>
 )
 }

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 const Homepage = () => {
     return (
         <div className="">
-        <Header />
         
         <video src={backgroundVideo} autoPlay loop muted 
         className="brightness-90 z-0 absolute top-0 left-0 w-full h-full object-cover">
