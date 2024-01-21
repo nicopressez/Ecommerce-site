@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import { sortPriceHighLow, sortPriceLowHigh } from './utils/sorting';
 
 const ShopTop = ({image, sex, sorting, setsorting}) => {

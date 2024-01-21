@@ -1,4 +1,3 @@
-import backgroundVideo from '../assets/videos/backgroundVideo.mp4'
 import backgroundVideo2 from '../assets/videos/backgroundVideo2.mp4'
 
 const Homepage = () => {

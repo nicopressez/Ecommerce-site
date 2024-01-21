@@ -16,6 +16,20 @@ import sixteenF from '../../assets/images/products/w/16.jpeg'
 import seventeenF from '../../assets/images/products/w/17.jpeg'
 import eighteenF from '../../assets/images/products/w/18.jpeg'
 import nineteenF from '../../assets/images/products/w/19.jpeg'
+import mOne from '../../assets/images/products/m/jean paul gaultier shirt.jpeg';
+import mTwo from '../../assets/images/products/m/Alexander McQueen Fall 2016.jpeg';
+import mThree from '../../assets/images/products/m/balenciaga light shoes.jpeg';
+import mFour from '../../assets/images/products/m/Burberry Spring 2019.jpeg';
+import mFive from '../../assets/images/products/m/Dolce & Gabbana Fall 2015.jpeg';
+import mSix from '../../assets/images/products/m/Dries Van Noten Fall 2016.jpeg';
+import mSeven from '../../assets/images/products/m/Gucci AW15.jpeg';
+import mEight from '../../assets/images/products//m/nike shoes.jpeg';
+import mNine from '../../assets/images/products/m/raf coat.jpeg';
+import mTen from '../../assets/images/products/m/Raf Simons Men’s Fall 2018.jpeg';
+import mEleven from '../../assets/images/products/m/Raf Simons Fall-Winter 2003.jpeg';
+import mTwelve from '../../assets/images/products/m/UNDERCOVER 2016.jpeg';
+import mFourteen from '../../assets/images/products/m/UNDERCOVER2020.jpeg';
+import mFifteen from '../../assets/images/products/m/Yohji Yamamoto Spring 2018.jpeg';
 
 const desc = "Lorem ipsum dolor sit amet, consectetur adispicing elit."
 
@@ -201,28 +215,146 @@ export const clothes = {
     brand:"Valentino",
     color: "Gold",
     description: desc,
-},
-/*{
-    name:,
-    img:,
-    gender:,
-    price:,
-    type:,
-    brand:,
-    color:,
-    description:,
-},
-{
-    name:,
-    img:,
-    gender:,
-    price:,
-    type:,
-    brand:,
-    color:,
-    description:,
-}*/
-],
-men: [{
+},],
+men: [ {
+    name: 'Red Faces Shirt',
+    img: mOne,
+    gender: 'men',
+    price: '2529.99',
+    type: 'Top',
+    brand: 'Jean Paul Gaultier',
+    color: 'Red',
+    description: desc,
+  },
+  {
+    name: 'Butterfly Suit',
+    img: mTwo,
+    gender: 'men',
+    price: '979.99',
+    type: 'Top',
+    brand: 'Alexander McQueen',
+    color: 'Black',
+    description: desc,
+  },
+  {
+    name: 'Balenciaga Boots',
+    img: mThree,
+    gender: 'men',
+    price: '779.99',
+    type: 'Shoes',
+    brand: 'Balenciaga',
+    color: 'Black',
+    description: desc,
+  },
+  {
+    name: 'Burberry Jacket',
+    img: mFour,
+    gender: 'men',
+    price: '779.99',
+    type: 'Top',
+    brand: 'Burberry',
+    color: 'Brown',
+    description: desc,
+  },
+  {
+    name: 'Gold Leaf Jacket',
+    img: mFive,
+    gender: 'men',
+    price: '3779.99',
+    type: 'Top',
+    brand: 'Dolce & Gabbana',
+    color: 'Gold',
+    description: desc,
+  },
+  {
+    name: 'Snake Coat',
+    img: mSix,
+    gender: 'men',
+    price: '3779.99',
+    type: 'Top',
+    brand: 'Dries Van Noten',
+    color: 'Blue',
+    description: desc,
+  },
+  {
+    name: 'Bee Pin',
+    img: mSeven,
+    gender: 'men',
+    price: '279.99',
+    type: 'Accessories',
+    brand: 'Gucci',
+    color: 'Gold',
+    description: desc,
+  },
+  {
+    name: 'React Shoes',
+    img: mEight,
+    gender: 'men',
+    price: '349.99',
+    type: 'Shoes',
+    brand: 'Nike',
+    color: 'Red',
+    description: desc,
+  },
+  {
+    name: 'Portrait Jacket',
+    img: mNine,
+    gender: 'men',
+    price: '6349.99',
+    type: 'Top',
+    brand: 'Raf Simons',
+    color: 'Black',
+    description: desc,
+  },
+  {
+    name: 'Red Girl Shirt',
+    img: mTen,
+    gender: 'men',
+    price: '1349.99',
+    type: 'Top',
+    brand: 'Raf Simons',
+    color: 'Red',
+    description: desc,
+  },
+  {
+    name: 'RS Pink Jacket',
+    img: mEleven,
+    gender: 'men',
+    price: '1149.99',
+    type: 'Top',
+    brand: 'Raf Simons',
+    color: 'Red',
+    description: desc,
+  },
+  {
+    name: 'Playing Card Pants',
+    img: mTwelve,
+    gender: 'men',
+    price: '949.99',
+    type: 'Bottom',
+    brand: 'Undercover',
+    color: 'Black',
+    description: desc,
+  },
+  {
+    name: 'Black Portrait Jacket',
+    img: mFourteen,
+    gender: 'men',
+    price: '1299.99',
+    type: 'Top',
+    brand: 'Undercover',
+    color: 'Black',
+    description: desc,
+  },
+  {
+    name: 'Face Long Sleeve',
+    img: mFifteen,
+    gender: 'men',
+    price: '699.99',
+    type: 'Top',
+    brand: 'Yohji Yamamoto',
+    color: 'Red',
+    description: desc,
+  },
 
-}]}
+]}

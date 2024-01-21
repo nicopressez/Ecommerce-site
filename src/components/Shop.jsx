@@ -1,11 +1,10 @@
 import Shopitem from "./Shopitem"
-import { clothes } from "./utils/clothes"
 import PropTypes from 'prop-types';
 
 const Shop = ({gender, sorting})  => {
     let clothing
     if (gender === "women") clothing = sorting.women
-    if (gender === "men") clothing = sorting.women
+    if (gender === "men") clothing = sorting.men
 
  return (
         <div className=" flex flex-wrap gap-4 bg-black justify-center pb-20">
