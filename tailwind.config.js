@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       height: {
-        '200': '50rem',
+        '200': '48rem',
       }
     },
     fontFamily: {

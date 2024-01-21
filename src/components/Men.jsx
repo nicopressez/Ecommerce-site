@@ -4,7 +4,7 @@ import ShopTop from './ShopTop'
 function  Men() {
     return (
 <div>
-    <ShopTop image={menImg}/>
+    <ShopTop image={menImg} sex={"Men's"}/>
 </div>
 )
 }

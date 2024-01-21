@@ -4,7 +4,7 @@ import ShopTop from './ShopTop'
 const Women = () => {
     return (
         <div>
-            <ShopTop image={womenImg} />
+            <ShopTop image={womenImg} sex={"Women's"} />
             </div>
         
     )
