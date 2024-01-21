@@ -2,10 +2,14 @@ import Shopitem from "./Shopitem"
 import { clothes } from "./utils/clothes"
 import PropTypes from 'prop-types';
 
-const Shop = ({gender}) => {
-    return (
+const Shop = ({gender, sorting})  => {
+    let clothing
+    if (gender === "women") clothing = sorting.women
+    if (gender === "men") clothing = sorting.women
+
+ return (
         <div className=" flex flex-wrap gap-4 bg-black justify-center pb-20">
-        {clothes.map((clothes,index)  =>
+        {clothing.map((clothes,index)  =>
             (<Shopitem item={clothes} key={index} gender={gender}/>)
         )}
         </div>
@@ -13,7 +17,8 @@ const Shop = ({gender}) => {
 }
 
 Shop.propTypes = {
-    gender: PropTypes.string
+    gender: PropTypes.string,
+    sorting: PropTypes.object,
 }
 
 

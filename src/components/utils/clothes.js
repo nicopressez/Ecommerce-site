@@ -20,7 +20,8 @@ import nineteenF from '../../assets/images/products/w/19.jpeg'
 const desc = "Lorem ipsum dolor sit amet, consectetur adispicing elit."
 
 
-export const clothes = [
+export const clothes = {
+     women: [
     {
         name: "Black Snake Dress",
         img: oneF,
@@ -221,4 +222,7 @@ export const clothes = [
     color:,
     description:,
 }*/
-]
+],
+men: [{
+
+}]}

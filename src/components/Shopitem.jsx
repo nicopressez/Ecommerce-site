@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
-const Shopitem = ({item, gender}) => {
-if (item.gender === gender  )    return (
+const Shopitem = ({item}) => {
+return (
 <div className='group bg-black w-80 text-center font-futura '>
     <img src={item.img} className=' object-cover h-96 w-96 group-hover:h-72
      transition-all duration-300'></img>
