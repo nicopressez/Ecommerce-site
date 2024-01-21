@@ -6,7 +6,7 @@ const Women = () => {
     return (
         <div>
             <ShopTop image={womenImg} sex={"WOMEN'S"} />
-            <Shop />
+            <Shop gender={"women"}/>
             </div>
         
     )
