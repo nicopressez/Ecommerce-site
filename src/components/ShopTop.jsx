@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { sortPriceLowHigh } from './utils/sorting';
+import { sortPriceHighLow, sortPriceLowHigh } from './utils/sorting';
 
 const ShopTop = ({image, sex, sorting, setsorting}) => {
 
     const sortPrice = (e) => {
-    if (e.target.value ==="priceUp") sortPriceLowHigh(sex,sorting,setsorting)}
-    
+    if (e.target.value ==="priceUp") sortPriceLowHigh(sex,sorting,setsorting)
+    if (e.target.value ==="priceDown") sortPriceHighLow(sex,sorting,setsorting)
+    }
     return (
         <div>
         <img src={image} className="absolute w-full h-200 object-cover brightness-90"></img>
@@ -14,8 +15,9 @@ const ShopTop = ({image, sex, sorting, setsorting}) => {
      text-5xl text-center text-white drop-shadow-2xl tracking-widest">{sex}</h1>
         <div className='absolute top-3/4 left-1/3 text-white font-futura '>
             <select onChange={(e) => sortPrice(e)} className='bg-transparent w-32 text-xl mr-12 text-center'>
-                <option value="" >Sort</option>
-                <option value="priceUp">Price Low to High</option>
+                <option value="" >Sort by Price</option>
+                <option value="priceUp">Low to High</option>
+                <option value="priceDown">High to Low</option>
             </select >
             <select className='bg-transparent w-32 text-xl mr-12 text-center'>
                 <option value="" className=''>All colors</option>
