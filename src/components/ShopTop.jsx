@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
-import { sortPriceHighLow, sortPriceLowHigh, sortColor } from './utils/sorting';
+import {sortBrand, sortPriceHighLow, sortPriceLowHigh, sortColor, sortTypes } from './utils/sorting';
 import ColorOptions from './ColorOptions';
 import { clothes } from './utils/clothes';
+import BrandOptions from './BrandOptions';
+import TypeOptions from './TypeOptions';
+
 
 const ShopTop = ({image, sex, sorting, setsorting}) => {
 
@@ -9,6 +12,7 @@ const ShopTop = ({image, sex, sorting, setsorting}) => {
     if (e.target.value ==="priceUp") sortPriceLowHigh(sex,sorting,setsorting)
     if (e.target.value ==="priceDown") sortPriceHighLow(sex,sorting,setsorting)
     }
+
     return (
         <div>
         <img src={image} className="absolute w-full h-200 object-cover brightness-90"></img>
@@ -22,13 +26,15 @@ const ShopTop = ({image, sex, sorting, setsorting}) => {
             </select >
             <select onChange={(e) => sortColor(e,sex,clothes,setsorting)} className='bg-transparent w-32 text-xl mr-12 text-center'>
                 <option value="all" className=''>All colors</option>
-                <ColorOptions sex={sex} sorting={clothes} setsorting={setsorting}/>
+                <ColorOptions sex={sex} sorting={clothes}/>
             </select>
-            <select className='bg-transparent w-32 text-xl mr-12 text-center'>
-                <option value="">All brands</option>
+            <select onChange={(e) => sortBrand(e,sex,clothes,setsorting)} className='bg-transparent w-32 text-xl mr-12 text-center'>
+                <option value="all">All brands</option>
+                <BrandOptions sex={sex} sorting={clothes} />
             </select>
-            <select className='bg-transparent w-32 text-xl mr-8 text-center'>
-                <option value="">All types</option>
+            <select onChange={(e) => sortTypes(e,sex,clothes,setsorting)}className='bg-transparent w-32 text-xl mr-8 text-center'>
+                <option value="all">All types</option>
+                <TypeOptions sex={sex} sorting={clothes}/>
             </select>
             <hr className=' text-center w-full mt-3'></hr>
         </div>

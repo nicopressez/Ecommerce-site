@@ -28,7 +28,8 @@ export const sortColor = (e,sex,sorting,setsorting) => {
     let gender
     if (sex === "WOMEN'S")  gender = 'women';
     else if (sex === "MEN'S")  gender = 'men';
-    if (e.target.value === "all") setsorting(clothes)
+
+    if (e.target.value === "all") setsorting(clothes);
 
     else {
 
@@ -37,3 +38,36 @@ export const sortColor = (e,sex,sorting,setsorting) => {
         setsorting(newSorting)
     }
 }
+
+export const sortBrand = (e,sex,sorting,setsorting) => {
+    const brand = e.target.value;
+    let gender
+    if (sex === "WOMEN'S")  gender = 'women';
+    else if (sex === "MEN'S")  gender = 'men';
+
+    if (e.target.value === "all") setsorting(clothes);
+
+    else {
+
+    const newSorting = {[gender]: sorting[gender].filter((item) => 
+        item.brand === brand)}
+        setsorting(newSorting)
+    }
+}
+
+export const sortTypes = (e,sex,sorting,setsorting) => {
+    const type = e.target.value;
+    let gender
+    if (sex === "WOMEN'S")  gender = 'women';
+    else if (sex === "MEN'S")  gender = 'men';
+
+    if (e.target.value === "all") setsorting(clothes);
+
+    else {
+
+    const newSorting = {[gender]: sorting[gender].filter((item) => 
+        item.type === type)}
+        setsorting(newSorting)
+    }
+}
+
