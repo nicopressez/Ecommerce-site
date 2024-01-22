@@ -5,8 +5,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import githubLogo from "../assets/images/github.png";
 import { NavLink } from "react-router-dom";
+import CartModal from "./Cart";
+import { useState } from "react";
 
 const Header = () => {
+  const [showCart, setShowCart] = useState(false);
+
+  const toggleCart = () => {
+    if (showCart) {return (
+      <CartModal showCart={showCart} setShowCart={setShowCart}/>
+    )}
+  }
   return (
     <header
       className="bg-gradient-to-b from-black/75 fixed w-screen h-24 z-50
@@ -59,11 +68,14 @@ const Header = () => {
           <li className="mt-0">About</li>
         </ul>
       </nav>
-      <FontAwesomeIcon
+      <div>
+      <FontAwesomeIcon onClick={() => setShowCart(!showCart)}
         icon={faCartShopping}
         className=" text-white size-5
           absolute right-28 top-10"
       />
+      {toggleCart()};
+      </div>
       <FontAwesomeIcon
         icon={faMagnifyingGlass}
         className="  text-white size-5
