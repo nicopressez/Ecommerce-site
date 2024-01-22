@@ -1,30 +1,32 @@
-import './index.css'
-import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
-import Homepage from './components/Homepage.jsx'
-import Men from './components/Men.jsx'
-import Women from './components/Women.jsx'
-import App from './App.jsx'
+import "./index.css";
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import Homepage from "./components/Homepage.jsx";
+import Men from "./components/Men.jsx";
+import Women from "./components/Women.jsx";
+import App from "./App.jsx";
 
 const Router = () => {
-    const router = createBrowserRouter ([
-  
+  const router = createBrowserRouter([
     {
       path: "/",
       element: <App />,
-      children: [{
-        index:true,
-        element: <Homepage />
-      },
-      {
-        path: "/men",
-        element: <Men />,
-      },
-      {
-        path: "/women",
-        element: <Women />,
-      },]
+      children: [
+        {
+          index: true,
+          element: <Homepage />,
+        },
+        {
+          path: "/men",
+          element: <Men />,
+        },
+        {
+          path: "/women",
+          element: <Women />,
+        },
+      ],
     },
-  ])
-  return <RouterProvider router={router} />;}
+  ]);
+  return <RouterProvider router={router} />;
+};
 
-  export default Router
+export default Router;
