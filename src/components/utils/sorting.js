@@ -1,73 +1,22 @@
-import { clothes } from "./clothes";
-
-export const sortPriceLowHigh = (sex, sorting, setsorting) => {
+export const sort = (sex, sorting, setsorting, typeValue, brandValue, colorValue) => {
     let gender;
     if (sex === "WOMEN'S")  gender = 'women';
     else if (sex === "MEN'S")  gender = 'men';
-    
-        const newSorting = {[gender]: sorting[gender].sort((a,b) => 
-        +a.price - +b.price)}
-        setsorting(newSorting)
+    let newSorting = sorting;
 
-}
-
-export const sortPriceHighLow = (sex, sorting, setsorting) => {
-    let gender;
-    if (sex === "WOMEN'S")  gender = 'women';
-    else if (sex === "MEN'S")  gender = 'men';
-    
-        const newSorting = {[gender]: sorting[gender].sort((a,b) => 
-        +a.price < +b.price ?  1 : -1)}
-        setsorting(newSorting)
-    
-
-}
-
-export const sortColor = (e,sex,sorting,setsorting) => {
-    const color = e.target.value;
-    let gender
-    if (sex === "WOMEN'S")  gender = 'women';
-    else if (sex === "MEN'S")  gender = 'men';
-
-    if (e.target.value === "all") setsorting(clothes);
-
-    else {
-
-    const newSorting = {[gender]: sorting[gender].filter((item) => 
-        item.color === color)}
-        setsorting(newSorting)
+    console.log (typeValue,colorValue)
+    if (typeValue != "all"){
+        newSorting = {[gender]: newSorting[gender].filter((item) => 
+            item.type === typeValue)}
     }
-}
-
-export const sortBrand = (e,sex,sorting,setsorting) => {
-    const brand = e.target.value;
-    let gender
-    if (sex === "WOMEN'S")  gender = 'women';
-    else if (sex === "MEN'S")  gender = 'men';
-
-    if (e.target.value === "all") setsorting(clothes);
-
-    else {
-
-    const newSorting = {[gender]: sorting[gender].filter((item) => 
-        item.brand === brand)}
-        setsorting(newSorting)
+    if (colorValue != "all"){
+        newSorting = {[gender]: newSorting[gender].filter((item) => 
+            item.color === colorValue)}
     }
-}
-
-export const sortTypes = (e,sex,sorting,setsorting) => {
-    const type = e.target.value;
-    let gender
-    if (sex === "WOMEN'S")  gender = 'women';
-    else if (sex === "MEN'S")  gender = 'men';
-
-    if (e.target.value === "all") setsorting(clothes);
-
-    else {
-
-    const newSorting = {[gender]: sorting[gender].filter((item) => 
-        item.type === type)}
-        setsorting(newSorting)
+    if (brandValue != "all"){
+        newSorting = {[gender]: newSorting[gender].filter((item) => 
+            item.brand === brandValue)}
+            
     }
+    setsorting(newSorting)
 }
-

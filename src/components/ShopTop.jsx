@@ -1,12 +1,29 @@
 import PropTypes from 'prop-types';
-import {sortBrand, sortPriceHighLow, sortPriceLowHigh, sortColor, sortTypes } from './utils/sorting';
+import {sort, sortPriceHighLow, sortPriceLowHigh } from './utils/sorting';
 import ColorOptions from './ColorOptions';
 import { clothes } from './utils/clothes';
 import BrandOptions from './BrandOptions';
 import TypeOptions from './TypeOptions';
+import { useState } from 'react';
 
 
 const ShopTop = ({image, sex, sorting, setsorting}) => {
+    const [selectedType, setSelectedType] = useState("all")
+    const [selectedBrand, setSelectedBrand] = useState("all")
+    const [selectedColor, setSelectedColor] = useState("all")
+
+    const handleTypeChange = (e) => {
+        setSelectedType(e.target.value);
+        sort(sex,clothes,setsorting,e.target.value,selectedBrand,selectedColor)
+    }
+    const handleBrandChange = (e) => {
+        setSelectedBrand(e.target.value);
+        sort(sex,clothes,setsorting,selectedType,e.target.value, selectedColor)
+    }
+    const handleColorChange = (e) => {
+        setSelectedColor(e.target.value);
+        sort(sex,clothes,setsorting,selectedType,selectedBrand,e.target.value)
+    }
 
     const sortPrice = (e) => {
     if (e.target.value ==="priceUp") sortPriceLowHigh(sex,sorting,setsorting)
@@ -24,15 +41,15 @@ const ShopTop = ({image, sex, sorting, setsorting}) => {
                 <option value="priceUp">Low to High</option>
                 <option value="priceDown">High to Low</option>
             </select >
-            <select onChange={(e) => sortColor(e,sex,clothes,setsorting)} className='bg-transparent w-32 text-xl mr-12 text-center'>
-                <option value="all" className=''>All colors</option>
+            <select onChange={(e) => handleColorChange(e)} className='bg-transparent w-32 text-xl mr-12 text-center'>
+                <option value="all">All colors</option>
                 <ColorOptions sex={sex} sorting={clothes}/>
             </select>
-            <select onChange={(e) => sortBrand(e,sex,clothes,setsorting)} className='bg-transparent w-32 text-xl mr-12 text-center'>
+            <select onChange={(e) => handleBrandChange(e)} className='bg-transparent w-32 text-xl mr-12 text-center'>
                 <option value="all">All brands</option>
                 <BrandOptions sex={sex} sorting={clothes} />
             </select>
-            <select onChange={(e) => sortTypes(e,sex,clothes,setsorting)}className='bg-transparent w-32 text-xl mr-8 text-center'>
+            <select onChange={(e) => handleTypeChange(e)}className='bg-transparent w-32 text-xl mr-8 text-center'>
                 <option value="all">All types</option>
                 <TypeOptions sex={sex} sorting={clothes}/>
             </select>
