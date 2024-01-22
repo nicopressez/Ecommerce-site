@@ -1,4 +1,3 @@
-import { clothes } from "./clothes";
 export const sort = (
   sex,
   sorting,
