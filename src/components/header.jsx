@@ -10,13 +10,6 @@ import { useState } from "react";
 
 const Header = () => {
   const [showCart, setShowCart] = useState(false);
-
-
-  const toggleCart = () => {
-    if (showCart) {return (
-      <CartModal showCart={showCart} setShowCart={setShowCart}/>
-    )}
-  }
   return (
     <header
       className="bg-gradient-to-b from-black/75 fixed w-screen h-24 z-50
@@ -75,14 +68,14 @@ const Header = () => {
         className=" cursor-pointer text-white size-5
           absolute right-28 top-10"
       />
-      {toggleCart()};
+      {showCart && <CartModal showCart={showCart} setShowCart={setShowCart} />};
       </div>
       <FontAwesomeIcon
         icon={faMagnifyingGlass}
         className="  text-white size-5
           absolute right-16 top-10"
       />
-      <a href="https://github.com/nicopressez" target="blank">
+      <a href="https://github.com/nicopressez" target="_blank" rel="noreferrer">
         <div className="absolute left-10 top-8 block">
           <img
             src={githubLogo}

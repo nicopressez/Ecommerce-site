@@ -4,7 +4,7 @@ import { cart, subtotal } from "./utils/cart";
 const CartModal = ({showCart, setShowCart}) => {
     return (
         <div className="font-futura absolute right-36 h-68 w-48 top-20">
-        <dialog open className=" overflow-scroll p-3 h-96 w-72 bg-white rounded-lg
+        <dialog open className=" transition-all duration-300 overflow-scroll p-3 h-96 w-72 bg-white rounded-lg
          border-2">
             <button className="absolute"onClick={() => setShowCart(!showCart)}>X</button>
             <p className=" text-right">Subtotal: {subtotal}€</p>
@@ -21,8 +21,9 @@ const CartModal = ({showCart, setShowCart}) => {
             ))
 
             }
-            <button className="bg-black text-white font-futuramedium
-                pl-16 pr-16 mt-3 ml-auto mr-auto pt-1 pb-1 text-xl   ">Checkout</button>
+            {cart[0]? <button className="bg-black text-white font-futuramedium
+                pl-16 pr-16 mt-3 ml-auto mr-auto pt-1 pb-1 text-xl   ">Checkout</button> :
+                <h2 className=" ml-auto mr-auto mt-6 text-xl">No items yet</h2>}
         </div>
 
         </dialog>
