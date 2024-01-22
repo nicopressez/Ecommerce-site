@@ -17,7 +17,6 @@ export const sortPriceHighLow = (sex, sorting, setsorting) => {
         const newSorting = {[gender]: sorting[gender].sort((a,b) => 
         +a.price < +b.price ?  1 : -1)}
         setsorting(newSorting)
-        console.log(newSorting)
     
 
 }

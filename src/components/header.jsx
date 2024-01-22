@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
     return (
         <header className="bg-gradient-to-b from-black/75 fixed w-screen h-24 z-10 
-        transition-colors duration-500 hover:bg-black">
+        transition-colors duration-500 hover:bg-black bg-scroll">
         <h1 className=" drop-shadow-xl text-4xl font-viola font-bold text-center text-white mt-2 tracking-widest
          mb-0">
             Brand
@@ -15,6 +15,7 @@ const Header = () => {
         <nav className="text-center mt-0 pt-0">
         <ul className=" mt-0 flex justify-center text-white font-futura gap-7 text-xs" >
             <li className=" mt-0">
+                
             <NavLink to="/"
             style={({isActive}) => {
                 return {
