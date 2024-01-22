@@ -53,31 +53,31 @@ const ShopTop = ({ image, sex, sorting, setsorting }) => {
       <div className="absolute top-3/4 left-1/3 text-white font-futura ">
         <select
           onChange={(e) => sortPrice(e)}
-          className="bg-transparent w-32 text-xl mr-12 text-center"
+          className="bg-transparent w-32 text-xl mr-12 text-center focus:outline-none pl-2"
         >
-          <option value="">Price</option>
-          <option value="priceUp">Low to High</option>
-          <option value="priceDown">High to Low</option>
+          <option value="" className="bg-black">Price</option>
+          <option value="priceUp" className="bg-black">Low to High</option>
+          <option value="priceDown" className="bg-black">High to Low</option>
         </select>
         <select
           onChange={(e) => handleColorChange(e)}
-          className="bg-transparent w-32 text-xl mr-12 text-center"
+          className="bg-transparent w-32 text-xl mr-12 text-center focus:outline-none" 
         >
-          <option value="all">All colors</option>
+          <option value="all" className="bg-black">All colors</option>
           <ColorOptions sex={sex} sorting={clothes} />
         </select>
         <select
           onChange={(e) => handleBrandChange(e)}
-          className="bg-transparent w-32 text-xl mr-12 text-center"
+          className="bg-transparent w-42 text-xl mr-12 text-center focus:outline-none"
         >
-          <option value="all">All brands</option>
+          <option value="all" className="bg-black">All brands</option>
           <BrandOptions sex={sex} sorting={clothes} />
         </select>
         <select
           onChange={(e) => handleTypeChange(e)}
-          className="bg-transparent w-32 text-xl mr-8 text-center"
+          className="bg-transparent w-32 text-xl mr-8 text-center focus:outline-none"
         >
-          <option value="all">All types</option>
+          <option value="all" className="bg-black">All types</option>
           <TypeOptions sex={sex} sorting={clothes} />
         </select>
         <hr className=" text-center w-full mt-3"></hr>

@@ -11,6 +11,7 @@ import { useState } from "react";
 const Header = () => {
   const [showCart, setShowCart] = useState(false);
 
+
   const toggleCart = () => {
     if (showCart) {return (
       <CartModal showCart={showCart} setShowCart={setShowCart}/>
@@ -71,7 +72,7 @@ const Header = () => {
       <div>
       <FontAwesomeIcon onClick={() => setShowCart(!showCart)}
         icon={faCartShopping}
-        className=" text-white size-5
+        className=" cursor-pointer text-white size-5
           absolute right-28 top-10"
       />
       {toggleCart()};

@@ -1,6 +1,9 @@
 export const cart = [];
+export let subtotal = 0;
 
 export const addItem = (item, size) => {
+    if (item.type !== "Accessories" && !size) return;
+    let totalPrice = 0
     const itemExists = cart.filter((element) => element.name === item.name)
     const exactItem = itemExists.find((element) => element.size === size)
     // If element doesn't already exist, create  
@@ -14,6 +17,8 @@ export const addItem = (item, size) => {
     else 
     {cart.push({...item, quantity:1, size:size});
 }
-
-    console.log(cart)
+    for (let i = 0; i < cart.length; i++) {
+         totalPrice += +cart[i].price;
+    }
+    subtotal = totalPrice.toFixed(2)
 }

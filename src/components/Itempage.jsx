@@ -13,7 +13,7 @@ const Item = ({items}) => {
    const currentItem = items[gender].find((item) => item.name === title)
    const sizes = () => {
     if (currentItem.type !== "Accessories") return (
-        <select onChange={(e) => setSize(e.target.value)}className="bg-black ml-60 font-futura text-2xl">
+        <select onChange={(e) => setSize(e.target.value)}className="bg-black ml-60 font-futura text-2xl focus:outline-none">
         <option value="">Size</option>
         <option value="S">S</option>
         <option value="M">M</option>

@@ -15,7 +15,7 @@ const BrandOptions = ({ sex, sorting }) => {
   return (
     <>
       {brands.map((brand, index) => (
-        <option value={brand} key={index}>
+        <option value={brand} key={index} className="bg-black">
           {brand}
         </option>
       ))}

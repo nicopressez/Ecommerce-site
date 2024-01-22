@@ -15,7 +15,7 @@ const ColorOptions = ({ sex, sorting }) => {
   return (
     <>
       {colors.map((color, index) => (
-        <option value={color} key={index}>
+        <option value={color} key={index} className="bg-black">
           {color}
         </option>
       ))}

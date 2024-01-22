@@ -15,7 +15,7 @@ const TypeOptions = ({ sex, sorting }) => {
   return (
     <>
       {types.map((type, index) => (
-        <option value={type} key={index}>
+        <option value={type} key={index} className="bg-black">
           {type}
         </option>
       ))}
