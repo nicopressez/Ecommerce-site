@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <header
-      className="bg-gradient-to-b from-black/75 fixed w-screen h-24 z-10 
+      className="bg-gradient-to-b from-black/75 fixed w-screen h-24 z-50
         transition-colors duration-500 hover:bg-black bg-scroll"
     >
       <h1
