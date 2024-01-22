@@ -1,7 +1,11 @@
 import { useParams } from "react-router-dom"
 import { PropTypes } from "prop-types";
+import { addItem } from "./utils/cart";
+import { useState } from "react";
 
 const Item = ({items}) => {
+    const [size, setSize] = useState("");
+    
     // Find current item in clothes to display its info
    const { title, gender } =  useParams();
 
@@ -9,11 +13,11 @@ const Item = ({items}) => {
    const currentItem = items[gender].find((item) => item.name === title)
    const sizes = () => {
     if (currentItem.type !== "Accessories") return (
-        <select className="bg-black ml-60 font-futura text-2xl">
+        <select onChange={(e) => setSize(e.target.value)}className="bg-black ml-60 font-futura text-2xl">
         <option value="">Size</option>
-        <option value="s">S</option>
-        <option value="m">M</option>
-        <option value="l">L</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
     </select>
     )
    }
@@ -31,7 +35,7 @@ return (
         <p className="pl-36 pt-6 font-futura text-xl">{currentItem.description}</p>
         <hr className=" border-gray-800 ml-16 mr-60 mt-10"></hr>
         {sizes()}
-        <button className="ml-44 mt-10 text-2xl font-futura rounded-md
+        <button onClick={() => addItem(currentItem,size)}className="ml-44 mt-10 text-2xl font-futura rounded-md
                            bg-white text-black pl-10 pr-10">Add to cart</button>
     </div>
     </div>

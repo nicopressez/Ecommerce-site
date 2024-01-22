@@ -1,5 +1,5 @@
 import "./index.css";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./components/Homepage.jsx";
 import Men from "./components/Men.jsx";
 import Women from "./components/Women.jsx";
