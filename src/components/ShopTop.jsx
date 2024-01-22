@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
-import { sortPriceHighLow, sortPriceLowHigh } from './utils/sorting';
+import { sortPriceHighLow, sortPriceLowHigh, sortColor } from './utils/sorting';
 import ColorOptions from './ColorOptions';
+import { clothes } from './utils/clothes';
 
 const ShopTop = ({image, sex, sorting, setsorting}) => {
 
@@ -19,9 +20,9 @@ const ShopTop = ({image, sex, sorting, setsorting}) => {
                 <option value="priceUp">Low to High</option>
                 <option value="priceDown">High to Low</option>
             </select >
-            <select className='bg-transparent w-32 text-xl mr-12 text-center'>
-                <option value="" className=''>All colors</option>
-                <ColorOptions sex={sex} sorting={sorting} setsorting={setsorting}/>
+            <select onChange={(e) => sortColor(e,sex,clothes,setsorting)} className='bg-transparent w-32 text-xl mr-12 text-center'>
+                <option value="all" className=''>All colors</option>
+                <ColorOptions sex={sex} sorting={clothes} setsorting={setsorting}/>
             </select>
             <select className='bg-transparent w-32 text-xl mr-12 text-center'>
                 <option value="">All brands</option>
