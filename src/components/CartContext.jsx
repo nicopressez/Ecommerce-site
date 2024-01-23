@@ -5,4 +5,5 @@ export const CartContext = createContext({
     products: 0,
     subtotal: 0,
     addItem: () => {},
+    showCart:[],
 })

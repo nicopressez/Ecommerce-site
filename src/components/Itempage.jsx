@@ -6,7 +6,7 @@ import { CartContext } from "./CartContext";
 const Item = ({items}) => {
     const [size, setSize] = useState("");
 
-    const {addItem} = useContext(CartContext)
+    const {addItem, setShowCart} = useContext(CartContext)
     
     // Find current item in clothes to display its info
    const { title, gender } =  useParams();
@@ -37,7 +37,7 @@ return (
         <p className="pl-36 pt-6 font-futura text-xl">{currentItem.description}</p>
         <hr className=" border-gray-800 ml-16 mr-60 mt-10"></hr>
         {sizes()}
-        <button onClick={() => addItem(currentItem,size)}className="ml-44 mt-10 text-2xl font-futura rounded-md
+        <button onClick={() => {addItem(currentItem,size); setShowCart(true)}} className="ml-44 mt-10 text-2xl font-futura rounded-md
                            bg-white text-black pl-10 pr-10">Add to cart</button>
     </div>
     </div>

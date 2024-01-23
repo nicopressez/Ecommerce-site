@@ -6,13 +6,12 @@ import {
 import githubLogo from "../assets/images/github.png";
 import { NavLink } from "react-router-dom";
 import CartModal from "./Cart";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CartContext } from "./CartContext";
 
 const Header = () => {
-  const [showCart, setShowCart] = useState(false);
 
-  const { products } = useContext(CartContext);
+  const { products, showCart, setShowCart } = useContext(CartContext);
 
   return (
     <header
