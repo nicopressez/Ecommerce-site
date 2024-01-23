@@ -1,8 +1,21 @@
 import { clothes } from "./utils/clothes"
 import searchImg from "../assets/images/search.jpg"
 import { Link } from "react-router-dom"
+import { useState } from "react"
 const Search = () => {
-    let allClothes = clothes.women.concat(clothes.men)
+    const [allClothes, setAllClothes] = useState(clothes.women.concat(clothes.men))
+    const originalClothes = clothes.women.concat(clothes.men)
+
+    const search = (e) => {
+        const filters = e.target.value.toLowerCase();
+        let filteredClothes = originalClothes.filter((item) => 
+            item.name.toLowerCase().includes(filters) || 
+            item.brand.toLowerCase().includes(filters) ||
+            item.color.toLowerCase().includes(filters) ||
+            item.type.toLowerCase().includes(filters));
+        console.log(filteredClothes)
+        setAllClothes(filteredClothes)
+    }
     return (
             <div className="bg-black min-h-screen overflow-hidden">
             <img src={searchImg} className="absolute z-0 w-full h-[300px] object-cover"></img>
@@ -12,7 +25,7 @@ const Search = () => {
             SEARCH
             </h1>
         </div>
-        <input type="text" placeholder="Search" className="bg-gray-900 border-gray-500 border-[1px] 
+        <input onChange={(e) => search(e)}type="text" placeholder="Search" className="bg-gray-900 border-gray-500 border-[1px] 
          pl-5 pr-24 pt-1 pb-1 font-futuramedium text-white focus:outline-none text-xl
           rounded-xl ml-32 mt-10"></input>
           <div className=" flex flex-col  font-futura ml-[550px]  text-white w-screen">
