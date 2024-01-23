@@ -1,6 +1,6 @@
 import Header from "./components/header";
-import { Outlet } from "react-router-dom";
-import { useState } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { CartContext } from "./components/CartContext";
 
 
@@ -9,6 +9,13 @@ export default function App() {
   const [products, setProducts] = useState(0);
   const [subtotal, setSubtotal] = useState(0);
   const [showCart, setShowCart] = useState(false);
+
+
+// On page change, smooth scroll back to top
+  let location = useLocation();
+  useEffect(() => {
+    window.scrollTo({top: 0, behavior:"smooth"})
+  }, [location])
 
 
  const addItem = (item, size) => {
