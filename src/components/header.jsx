@@ -11,12 +11,20 @@ import { CartContext } from "./CartContext";
 
 const Header = () => {
 
+// Add black background to header on scroll
+  window.onscroll = () => {
+    const navBar = document.getElementById("nav");
+    if (document.documentElement.scrollTop >= 30) 
+    navBar.classList.add("bg-black")
+  else navBar.classList.remove("bg-black")
+  }
+
   const { products, showCart, setShowCart } = useContext(CartContext);
 
   return (
-    <header
+    <header id="nav"
       className="bg-gradient-to-b from-black/75 fixed w-screen h-24 z-50
-        transition-colors duration-500 hover:bg-black bg-scroll"
+        transition-colors duration-500 hover:bg-black"
     >
       <h1
         className=" drop-shadow-xl text-4xl font-viola font-bold text-center text-white mt-2 tracking-[9px]
