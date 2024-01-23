@@ -19,32 +19,41 @@ export default function App() {
     if (!itemExists[0])
     {cart.push({...item, quantity:1, size:size});
     setProducts(products + 1)
-    setSubtotal(subtotal + +item.price)
+    setSubtotal(Number((subtotal + +item.price).toFixed(2)))
     }  
     // If element exists and size is same, just add 1 quantity
     else  if (exactItem) {
     cart.filter((element) => element.name === item.name)
     .find((element) => element.size === size).quantity += 1;
-    setSubtotal(subtotal + +item.price)}
+    setSubtotal(Number((subtotal + +item.price).toFixed(2)))}
     // If element exists and size is different, create 
     else 
     {cart.push({...item, quantity:1, size:size});
     setProducts(products + 1);
-    setSubtotal(subtotal + +item.price)
+    setSubtotal(Number((subtotal + +item.price).toFixed(2)))
 }
     setCart(cart)
 }
 
 const removeItem = (item) => {
-  const index = cart.findIndex( (product) => { product == item });
+  const index = cart.filter( (product) => product.name === item.name)
+  .findIndex((product) => product.size === item.size );
   cart.splice(index, 1);
-  setSubtotal(subtotal - item.price * item.quantity);
+  setSubtotal(Number((subtotal - (item.price * item.quantity).toFixed(2)).toFixed(2)));
   setProducts(products - 1)
   setCart(cart);
 }
+
+const editQuantity = (item, newQuantity) => {
+  const index = cart.findIndex((product) => product === item);
+  const previousQuantity = cart[index].quantity
+  cart[index].quantity = newQuantity;
+  setSubtotal(Number(((subtotal - item.price * previousQuantity) + item.price * newQuantity).toFixed(2)))
+  setCart(cart)
+}
   return (
     <>
-    <CartContext.Provider value={{ cart, products, subtotal, addItem,showCart, setShowCart, removeItem }}>
+    <CartContext.Provider value={{ cart, products, subtotal, addItem,showCart, setShowCart, removeItem, editQuantity }}>
       <Header />
       <Outlet />
     </CartContext.Provider>

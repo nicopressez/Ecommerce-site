@@ -6,6 +6,7 @@ import Women from "./components/Women.jsx";
 import App from "./App.jsx";
 import { clothes } from "./components/utils/clothes.js";
 import Item from "./components/Itempage.jsx";
+import Checkout from "./components/Checkout.jsx";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const Router = () => {
         {
           path: "/women",
           element: <Women />,
+        },
+        {
+          path: "/checkout",
+          element: <Checkout />,
         },
         {
           path: "shop/:gender/:title",
