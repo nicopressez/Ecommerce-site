@@ -1,7 +1,10 @@
 import { PropTypes } from "prop-types";
-import { cart, subtotal } from "./utils/cart";
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
 
 const CartModal = ({showCart, setShowCart}) => {
+
+    const { subtotal, cart} = useContext(CartContext)
     return (
         <div className="font-futura absolute right-36 h-68 w-48 top-20">
         <dialog open className=" transition-all duration-300 overflow-scroll p-3 h-96 w-72 bg-white rounded-lg

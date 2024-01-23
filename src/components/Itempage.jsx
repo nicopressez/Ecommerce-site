@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom"
 import { PropTypes } from "prop-types";
-import { addItem } from "./utils/cart";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "./CartContext";
 
 const Item = ({items}) => {
     const [size, setSize] = useState("");
+
+    const {addItem} = useContext(CartContext)
     
     // Find current item in clothes to display its info
    const { title, gender } =  useParams();

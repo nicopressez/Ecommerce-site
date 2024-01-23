@@ -6,10 +6,14 @@ import {
 import githubLogo from "../assets/images/github.png";
 import { NavLink } from "react-router-dom";
 import CartModal from "./Cart";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "./CartContext";
 
 const Header = () => {
   const [showCart, setShowCart] = useState(false);
+
+  const { products } = useContext(CartContext);
+
   return (
     <header
       className="bg-gradient-to-b from-black/75 fixed w-screen h-24 z-50
@@ -68,6 +72,7 @@ const Header = () => {
         className=" cursor-pointer text-white size-5
           absolute right-28 top-10"
       />
+      <h1>{products}</h1>
       {showCart && <CartModal showCart={showCart} setShowCart={setShowCart} />};
       </div>
       <FontAwesomeIcon
