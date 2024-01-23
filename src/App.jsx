@@ -36,8 +36,8 @@ export default function App() {
 }
 
 const removeItem = (item) => {
-  const index = cart.filter( (product) => product.name === item.name)
-  .findIndex((product) => product.size === item.size );
+  const index = cart.findIndex((element) => element.name === item.name 
+  && element.size === item.size);
   cart.splice(index, 1);
   setSubtotal(Number((subtotal - (item.price * item.quantity).toFixed(2)).toFixed(2)));
   setProducts(products - 1)
@@ -45,7 +45,8 @@ const removeItem = (item) => {
 }
 
 const editQuantity = (item, newQuantity) => {
-  const index = cart.findIndex((product) => product === item);
+  const index = cart.findIndex((element) => element.name === item.name 
+  && element.size === item.size);
   const previousQuantity = cart[index].quantity
   cart[index].quantity = newQuantity;
   setSubtotal(Number(((subtotal - item.price * previousQuantity) + item.price * newQuantity).toFixed(2)))
