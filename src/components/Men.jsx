@@ -1,7 +1,7 @@
 import menImg from "../assets/images/mensTop.jpg";
 import Shop from "./Shop";
 import ShopTop from "./ShopTop";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { clothes } from "./utils/clothes";
 
 function Men() {
@@ -10,10 +10,12 @@ function Men() {
 
   useEffect(() => {
     setLoaded(true);
-  }, [])
+  }, []);
 
   return (
-    <div className={` opacity-0 transition-all duration-300 ${loaded ? "opacity-100" : null} `}>
+    <div
+      className={` opacity-0 transition-all duration-300 ${loaded ? "opacity-100" : null} `}
+    >
       <ShopTop
         image={menImg}
         sex={"MEN'S"}

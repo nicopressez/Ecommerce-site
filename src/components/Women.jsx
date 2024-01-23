@@ -10,10 +10,12 @@ const Women = () => {
 
   useEffect(() => {
     setLoaded(true);
-  }, [])
+  }, []);
 
   return (
-    <div className={` opacity-0 transition-all duration-300 ${loaded ? "opacity-100" : null} `}>
+    <div
+      className={` opacity-0 transition-all duration-300 ${loaded ? "opacity-100" : null} `}
+    >
       <ShopTop
         image={womenImg}
         sex={"WOMEN'S"}

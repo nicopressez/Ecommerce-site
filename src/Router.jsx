@@ -34,16 +34,16 @@ const Router = () => {
         },
         {
           path: "/search",
-          element: <Search />
+          element: <Search />,
         },
         {
           path: "/about",
-          element: <About />
+          element: <About />,
         },
         {
           path: "shop/:gender/:title",
-          element: <Item items={clothes} />
-        }
+          element: <Item items={clothes} />,
+        },
       ],
     },
   ]);
