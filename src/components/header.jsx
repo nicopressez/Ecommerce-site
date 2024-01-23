@@ -4,7 +4,7 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import githubLogo from "../assets/images/github.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import CartModal from "./Cart";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
@@ -74,11 +74,13 @@ const Header = () => {
       <p className=" absolute right-[102px] top-8 bg-red-600 font-futura text-center w-4 h-4 text-hs text-white rounded-full ">{products}</p>
       {showCart && <CartModal showCart={showCart} setShowCart={setShowCart} />}
       </div>
+      <Link to="/search">
       <FontAwesomeIcon
         icon={faMagnifyingGlass}
         className="  text-white size-5
           absolute right-16 top-10"
       />
+      </Link>
       <a href="https://github.com/nicopressez" target="_blank" rel="noreferrer">
         <div className="absolute left-10 top-8 block">
           <img

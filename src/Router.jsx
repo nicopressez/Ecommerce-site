@@ -7,6 +7,7 @@ import App from "./App.jsx";
 import { clothes } from "./components/utils/clothes.js";
 import Item from "./components/Itempage.jsx";
 import Checkout from "./components/Checkout.jsx";
+import Search from "./components/Search.jsx";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const Router = () => {
         {
           path: "/checkout",
           element: <Checkout />,
+        },
+        {
+          path: "/search",
+          element: <Search />
         },
         {
           path: "shop/:gender/:title",

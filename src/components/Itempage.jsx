@@ -25,7 +25,7 @@ const Item = ({items}) => {
    }
 return (
     <div className=" flex">
-    <img src={currentItem.img} className=" contain absolute
+    <img src={currentItem.img} className=" object-cover absolute
      h-screen w-2/5 brightness-75"></img>
      <div className=" z-10 bg-gradient-to-l from-black  h-screen w-2/3"></div>
     <div className="bg-black h-screen w-screen pt-44 text-white">
