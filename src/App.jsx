@@ -34,9 +34,17 @@ export default function App() {
 }
     setCart(cart)
 }
+
+const removeItem = (item) => {
+  const index = cart.findIndex( (product) => { product == item });
+  cart.splice(index, 1);
+  setSubtotal(subtotal - item.price * item.quantity);
+  setProducts(products - 1)
+  setCart(cart);
+}
   return (
     <>
-    <CartContext.Provider value={{ cart, products, subtotal, addItem,showCart, setShowCart }}>
+    <CartContext.Provider value={{ cart, products, subtotal, addItem,showCart, setShowCart, removeItem }}>
       <Header />
       <Outlet />
     </CartContext.Provider>

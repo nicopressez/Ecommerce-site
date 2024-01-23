@@ -6,4 +6,5 @@ export const CartContext = createContext({
     subtotal: 0,
     addItem: () => {},
     showCart:[],
+    removeItem: () => {},
 })
