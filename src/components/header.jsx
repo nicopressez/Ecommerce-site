@@ -72,8 +72,8 @@ const Header = () => {
         className=" cursor-pointer text-white size-5
           absolute right-28 top-10"
       />
-      <h1>{products}</h1>
-      {showCart && <CartModal showCart={showCart} setShowCart={setShowCart} />};
+      <p className=" absolute right-[102px] top-8 bg-red-600 font-futura text-center w-4 h-4 text-hs text-white rounded-full ">{products}</p>
+      {showCart && <CartModal showCart={showCart} setShowCart={setShowCart} />}
       </div>
       <FontAwesomeIcon
         icon={faMagnifyingGlass}
