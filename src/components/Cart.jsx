@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 const CartModal = ({showCart, setShowCart}) => {
 
+
     const { subtotal, cart, removeItem} = useContext(CartContext)
     return (
         <div className="font-futura absolute right-36 h-68 w-48 top-20">

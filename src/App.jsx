@@ -54,7 +54,7 @@ const editQuantity = (item, newQuantity) => {
 }
   return (
     <>
-    <CartContext.Provider value={{ cart, products, subtotal, addItem,showCart, setShowCart, removeItem, editQuantity }}>
+    <CartContext.Provider value={{ cart, products, subtotal, addItem,showCart, setShowCart, removeItem, editQuantity, setCart, setSubtotal, setProducts }}>
       <Header />
       <Outlet />
     </CartContext.Provider>

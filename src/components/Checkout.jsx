@@ -1,11 +1,20 @@
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import checkoutImg from "../assets/images/hero.jpg";
 import { CartContext } from "./CartContext";
 
+
 const Checkout = () => {
 
-    const { cart, subtotal, removeItem, editQuantity } = useContext(CartContext);
+    const { cart, setCart, subtotal, setSubtotal, setProducts,  removeItem, editQuantity } = useContext(CartContext);
+    const [orderComplete, setOrderComplete] = useState(false);
 
+    const finishOrderHandler = () => {
+        setCart([]);
+        setSubtotal(0);
+        setProducts(0);
+        setOrderComplete(true);
+    }
+    
     return (
         <div className="bg-black min-h-screen">
             <img src={checkoutImg} className="absolute z-0 w-full h-2/5 object-cover"></img>
@@ -13,7 +22,8 @@ const Checkout = () => {
       drop-shadow-2xl text-white" >
         <h1 className=" w-screen absolute top-40 text-center tracking-widest text-5xl">SHOPPING CART</h1>
         </div>
-        <hr className=" ml-auto mr-auto w-2/3 border-gray-700"></hr>
+        {!orderComplete ? <> 
+            <hr className=" ml-auto mr-auto w-2/3 border-gray-700"></hr>
         <div className="text-white flex flex-col ml-52 font-futura">
         {cart.map((item, i) => (
             <div  key={i} className="mb-5 mt-5">
@@ -47,9 +57,19 @@ const Checkout = () => {
                 <h2 className="mb-4">Tax: {(subtotal *5/100).toFixed(2)}€</h2>
                 <h2 className=" font-bold text-xl mb-4">Total: {(subtotal + 15 + subtotal *5/100).toFixed(2)}€</h2>
                 <hr className=" ml-2 mr-2 border-gray-500"></hr>
-                <button className="font-bold pl-4 pr-4 pt-1 pb-1 text-2xl bg-black text-white mt-6">COMPLETE ORDER</button>
+                <button className="font-bold pl-4 pr-4 pt-1 pb-1 text-2xl bg-black text-white mt-6"
+                 onClick={finishOrderHandler}>COMPLETE ORDER</button>
             
-        </div>
+        </div> </> : 
+        <div className="ml-auto mr-auto w-1/2 mt-5 pt-24 pb-24
+         text-center text-white font-futura border-2 border-white">
+            <h1 className="text-4xl tracking-wide">
+            ORDER COMPLETE &#10003; 
+            </h1>
+            <p className="text-sm">Order nr. #LG78ER3F</p>
+
+         </div>}
+        
         </div>
     )
 }
