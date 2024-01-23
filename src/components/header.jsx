@@ -19,7 +19,7 @@ const Header = () => {
         transition-colors duration-500 hover:bg-black bg-scroll"
     >
       <h1
-        className=" drop-shadow-xl text-4xl font-viola font-bold text-center text-white mt-2 tracking-widest
+        className=" drop-shadow-xl text-4xl font-viola font-bold text-center text-white mt-2 tracking-[9px]
          mb-0"
       >
         Brand

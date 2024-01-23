@@ -46,7 +46,7 @@ const ShopTop = ({ image, sex, sorting, setsorting }) => {
       ></img>
       <h1
         className="bg-gradient-to-t from-black pb-96 pt-80 font-futura
-     text-5xl text-center text-white drop-shadow-2xl tracking-widest"
+     text-5xl text-center text-white drop-shadow-2xl tracking-[12px]"
       >
         {sex}
       </h1>

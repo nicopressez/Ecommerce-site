@@ -13,7 +13,6 @@ const Search = () => {
             item.brand.toLowerCase().includes(filters) ||
             item.color.toLowerCase().includes(filters) ||
             item.type.toLowerCase().includes(filters));
-        console.log(filteredClothes)
         setAllClothes(filteredClothes)
     }
     return (

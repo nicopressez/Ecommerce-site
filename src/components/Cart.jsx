@@ -13,7 +13,7 @@ const CartModal = ({showCart, setShowCart}) => {
         <div className="font-futura absolute right-36 h-68 w-48 top-20">
         <dialog open className=" transition-all duration-300 overflow-scroll p-3 h-96 w-72 bg-white rounded-lg
          border-2">
-            <button className="absolute"onClick={() => setShowCart(!showCart)}>X</button>
+            <button className="absolute text-[20px]"onClick={() => setShowCart(!showCart)}>&#10006;</button>
             <p className=" text-right">Subtotal: {subtotal}€</p>
             <hr className="mt-2 border-black border-1"></hr>
         <div className="flex flex-wrap">
