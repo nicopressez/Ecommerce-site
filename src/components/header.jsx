@@ -70,7 +70,16 @@ const Header = () => {
               Women
             </NavLink>
           </li>
-          <li className="mt-0">About</li>
+          <li className="mt-0">
+            <NavLink to="/about"
+            style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? "bold" : ""
+              }
+            }}>
+            About
+            </NavLink>
+            </li>
         </ul>
       </nav>
       <div>

@@ -8,6 +8,7 @@ import { clothes } from "./components/utils/clothes.js";
 import Item from "./components/Itempage.jsx";
 import Checkout from "./components/Checkout.jsx";
 import Search from "./components/Search.jsx";
+import About from "./components/About.jsx";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const Router = () => {
         {
           path: "/search",
           element: <Search />
+        },
+        {
+          path: "/about",
+          element: <About />
         },
         {
           path: "shop/:gender/:title",

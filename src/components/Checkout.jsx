@@ -20,7 +20,7 @@ const Checkout = () => {
             <img src={checkoutImg} className="absolute z-0 w-full h-2/5 object-cover"></img>
             <div className="bg-gradient-to-t from-black pt-96 font-futura
       drop-shadow-2xl text-white" >
-        <h1 className=" w-screen absolute top-40 text-center tracking-widest text-5xl">SHOPPING CART</h1>
+        <h1 className=" w-screen absolute top-40 text-center tracking-[16px] text-5xl">SHOPPING CART</h1>
         </div>
         {!orderComplete ? <> 
             <hr className=" ml-auto mr-auto w-2/3 border-gray-700"></hr>
