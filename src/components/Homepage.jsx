@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom";
 import backgroundVideo2 from "../assets/videos/backgroundVideo2.mp4";
+import { useEffect, useState } from "react";
 
 const Homepage = () => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, [])
+
   return (
-    <div className="">
+    <>
+    <div  className={` opacity-0 transition-all duration-500 ${loaded ? "opacity-100" : null} `} >
       <video
         src={backgroundVideo2}
         autoPlay
@@ -30,6 +38,7 @@ const Homepage = () => {
         </Link>
       </button>
     </div>
+    </>
   );
 };
 

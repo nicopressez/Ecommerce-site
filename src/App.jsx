@@ -10,13 +10,11 @@ export default function App() {
   const [subtotal, setSubtotal] = useState(0);
   const [showCart, setShowCart] = useState(false);
 
-
 // On page change, smooth scroll back to top
   let location = useLocation();
   useEffect(() => {
     window.scrollTo({top: 0, behavior:"smooth"})
   }, [location])
-
 
  const addItem = (item, size) => {
     if (item.type !== "Accessories" && !size) return;
