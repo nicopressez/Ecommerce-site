@@ -1,9 +1,11 @@
+import React from 'react'; // 
 import aboutImg from "../assets/images/about.jpg";
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <div className="bg-black min-h-screen">
       <img
+        alt='About Background'
         src={aboutImg}
         className="absolute z-0 w-full top-[-60%] h-[130%] object-cover"
       ></img>
