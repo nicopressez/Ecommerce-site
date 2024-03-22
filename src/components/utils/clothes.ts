@@ -31,9 +31,29 @@ import mTwelve from "../../assets/images/products/m/UNDERCOVER 2016.jpeg";
 import mFourteen from "../../assets/images/products/m/UNDERCOVER2020.jpeg";
 import mFifteen from "../../assets/images/products/m/Yohji Yamamoto Spring 2018.jpeg";
 
-const desc = "Lorem ipsum dolor sit amet, consectetur adispicing elit.";
+const desc:string = "Lorem ipsum dolor sit amet, consectetur adispicing elit.";
 
-export const clothes = {
+type ClothesItem = {
+  name: string;
+  img: any; 
+  gender: string;
+  price: string;
+  type: string;
+  brand: string;
+  color: string;
+  description: string;
+  size?: string; 
+  quantity?: number;
+};
+
+type GenderItems = ClothesItem[];
+
+type Clothes = {
+  women: GenderItems;
+  men: GenderItems;
+};
+
+export const clothes:Clothes = {
   women: [
     {
       name: "Black Snake Dress",

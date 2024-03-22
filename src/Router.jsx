@@ -4,7 +4,7 @@ import Homepage from "./components/Homepage.jsx";
 import Men from "./components/Men.jsx";
 import Women from "./components/Women.jsx";
 import App from "./App.jsx";
-import { clothes } from "./components/utils/clothes.js";
+import { clothes } from "./components/utils/clothes.ts";
 import Item from "./components/Itempage.jsx";
 import Checkout from "./components/Checkout.jsx";
 import Search from "./components/Search.jsx";
