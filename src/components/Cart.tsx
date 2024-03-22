@@ -1,12 +1,35 @@
-import { PropTypes } from "prop-types";
-import { useContext } from "react";
+import React,{ useContext } from "react";
 import { CartContext } from "./CartContext";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-const CartModal = ({ showCart, setShowCart }) => {
-  const { subtotal, cart, removeItem } = useContext(CartContext);
+type ClothesItem = {
+  name:string;
+  img: any;
+  gender: string;
+  price: string;
+  type: string;
+  brand: string;
+  color: string;
+  description: string;
+  size: string;
+  quantity:number
+};
+
+type CartContextType = {
+  subtotal: number;
+  cart: ClothesItem[];
+  removeItem: (item: ClothesItem) => void;
+};
+
+type CartModalProps = {
+  showCart: boolean,
+  setShowCart:React.Dispatch<React.SetStateAction<boolean>>,
+}
+
+function CartModal  ({ showCart, setShowCart } : CartModalProps)  {
+  const { subtotal, cart, removeItem } = useContext(CartContext) as CartContextType
   return (
     <div className="font-futura absolute right-36 h-68 w-48 top-20">
       <dialog
@@ -55,11 +78,6 @@ const CartModal = ({ showCart, setShowCart }) => {
       </dialog>
     </div>
   );
-};
-
-CartModal.propTypes = {
-  showCart: PropTypes.bool,
-  setShowCart: PropTypes.func,
 };
 
 export default CartModal;
