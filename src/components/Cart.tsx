@@ -4,32 +4,13 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-type ClothesItem = {
-  name:string;
-  img: any;
-  gender: string;
-  price: string;
-  type: string;
-  brand: string;
-  color: string;
-  description: string;
-  size: string;
-  quantity:number
-};
-
-type CartContextType = {
-  subtotal: number;
-  cart: ClothesItem[];
-  removeItem: (item: ClothesItem) => void;
-};
-
 type CartModalProps = {
   showCart: boolean,
   setShowCart:React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 function CartModal  ({ showCart, setShowCart } : CartModalProps)  {
-  const { subtotal, cart, removeItem } = useContext(CartContext) as CartContextType
+  const { subtotal, cart, removeItem } = useContext(CartContext) 
   return (
     <div className="font-futura absolute right-36 h-68 w-48 top-20">
       <dialog

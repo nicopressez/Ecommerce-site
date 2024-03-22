@@ -7,7 +7,7 @@ type ClothesItem = {
   price: string;
   type: string;
   brand: string;
-  color: string;
+  color?: string;
   description: string;
 };
 
