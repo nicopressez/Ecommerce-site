@@ -8,7 +8,7 @@ import { clothes } from "./components/utils/clothes.js";
 import Item from "./components/Itempage.jsx";
 import Checkout from "./components/Checkout.jsx";
 import Search from "./components/Search.jsx";
-import About from "./components/About.jsx";
+import About from "./components/About.tsx";
 
 const Router = () => {
   const router = createBrowserRouter([
