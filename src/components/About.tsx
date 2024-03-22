@@ -1,7 +1,8 @@
-import React from 'react'; // 
+import React from 'react'; 
 import aboutImg from "../assets/images/about.jpg";
 
 const About: React.FC = () => {
+  
   return (
     <div className="bg-black min-h-screen">
       <img
