@@ -18,11 +18,12 @@ interface CartContextType {
   cart: ClothesItem[]; 
   products: number;
   subtotal: number;
-  addItem: (item: ClothesItem, size:number) => void;
+  addItem: (item: ClothesItem, size:string) => void;
   showCart: boolean; 
   removeItem: (item: ClothesItem ) => void;
   editQuantity: (item:ClothesItem, newQuantity:number) => void;
   setCart: React.Dispatch<React.SetStateAction<ClothesItem[]>>
+  setShowCart: React.Dispatch<React.SetStateAction<boolean>>
   setSubtotal: React.Dispatch<React.SetStateAction<number>>
   setProducts: React.Dispatch<React.SetStateAction<number>>
 }
@@ -36,6 +37,7 @@ export const CartContext = createContext<CartContextType>({
   removeItem: () => {},
   editQuantity: () => {},
   setCart: () => {},
+  setShowCart: () => {},
   setSubtotal: () => {},
   setProducts: () => {},
 });

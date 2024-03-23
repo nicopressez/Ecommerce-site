@@ -1,7 +1,7 @@
 import womenImg from "../assets/images/womensTop.jpg";
 import Shop from "./Shop";
 import ShopTop from "./ShopTop";
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import { clothes } from "./utils/clothes";
 
 const Women = () => {
