@@ -1,14 +1,14 @@
 import { clothes } from "./utils/clothes";
 import searchImg from "../assets/images/search.jpg";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import React,{ useState } from "react";
 const Search = () => {
   const [allClothes, setAllClothes] = useState(
     clothes.women.concat(clothes.men),
   );
   const originalClothes = clothes.women.concat(clothes.men);
 
-  const search = (e) => {
+  const search = (e : React.ChangeEvent<HTMLInputElement>) => {
     const filters = e.target.value.toLowerCase();
     let filteredClothes = originalClothes.filter(
       (item) =>

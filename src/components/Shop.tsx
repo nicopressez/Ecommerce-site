@@ -1,9 +1,30 @@
 import { Link } from "react-router-dom";
 import Shopitem from "./Shopitem";
-import PropTypes from "prop-types";
+import React from "react";
 
-const Shop = ({ gender, sorting }) => {
-  let clothing;
+type ClothesItem = {
+  name:string;
+  img: any;
+  gender: string;
+  price: string;
+  type: string;
+  brand: string;
+  color?: string;
+  description: string;
+};
+
+type SortingType = {
+  women: ClothesItem[];
+  men: ClothesItem[];
+};
+
+type ShopPropsType = {
+  gender: string,
+  sorting: SortingType
+}
+
+const Shop = ({ gender, sorting } : ShopPropsType) => {
+  let clothing:ClothesItem[] = [];
   if (gender === "women") clothing = sorting.women;
   if (gender === "men") clothing = sorting.men;
 
@@ -29,11 +50,6 @@ const Shop = ({ gender, sorting }) => {
       ))}
     </div>
   );
-};
-
-Shop.propTypes = {
-  gender: PropTypes.string,
-  sorting: PropTypes.object,
 };
 
 export default Shop;
