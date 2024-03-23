@@ -1,12 +1,40 @@
-import PropTypes from "prop-types";
 import { sort, sortPriceHighLow, sortPriceLowHigh } from "./utils/sorting";
-import ColorOptions from "./ColorOptions.tsx";
+import ColorOptions from "./ColorOptions";
 import { clothes } from "./utils/clothes";
-import BrandOptions from "./BrandOptions.tsx";
+import BrandOptions from "./BrandOptions";
 import TypeOptions from "./TypeOptions";
-import { useState } from "react";
+import React,{ useState } from "react";
 
-const ShopTop = ({ image, sex, sorting, setsorting }) => {
+type ClothesItem = {
+  name: string;
+  img: any; 
+  gender: string;
+  price: string;
+  type: string;
+  brand: string;
+  color: string;
+  description: string;
+  size?: string; 
+  quantity?: number;
+};
+
+type GenderItems = ClothesItem[];
+
+type ClothesType = {
+  women: GenderItems;
+  men: GenderItems;
+};
+
+type ShopTopPropsType = {
+  image: any,
+  sex: string,
+  sorting: ClothesType,
+  setsorting: React.Dispatch<React.SetStateAction<ClothesType>>
+}
+
+const ShopTop = ({ image, sex, sorting, setsorting } : 
+  ShopTopPropsType
+  ) => {
   const [selectedType, setSelectedType] = useState("all");
   const [selectedBrand, setSelectedBrand] = useState("all");
   const [selectedColor, setSelectedColor] = useState("all");
@@ -22,16 +50,16 @@ const ShopTop = ({ image, sex, sorting, setsorting }) => {
       selectedColor,
     );
   };
-  const handleBrandChange = (e) => {
+  const handleBrandChange = (e : React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedBrand(e.target.value);
     sort(sex, clothes, setsorting, selectedType, e.target.value, selectedColor);
   };
-  const handleColorChange = (e) => {
+  const handleColorChange = (e : React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedColor(e.target.value);
     sort(sex, clothes, setsorting, selectedType, selectedBrand, e.target.value);
   };
 
-  const sortPrice = (e) => {
+  const sortPrice = (e : React.ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === "priceUp")
       sortPriceLowHigh(sex, sorting, setsorting);
     if (e.target.value === "priceDown")
@@ -96,13 +124,6 @@ const ShopTop = ({ image, sex, sorting, setsorting }) => {
       </div>
     </div>
   );
-};
-
-ShopTop.propTypes = {
-  image: PropTypes.string,
-  sex: PropTypes.string,
-  sorting: PropTypes.object,
-  setsorting: PropTypes.func,
 };
 
 export default ShopTop;

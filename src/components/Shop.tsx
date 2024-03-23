@@ -45,7 +45,7 @@ const Shop = ({ gender, sorting } : ShopPropsType) => {
       ) : null}
       {clothing.map((clothes, index) => (
         <Link to={`/shop/${clothes.gender}/${clothes.name}`} key={index}>
-          <Shopitem item={clothes} key={index} gender={gender} />
+          <Shopitem item={clothes} key={index} />
         </Link>
       ))}
     </div>

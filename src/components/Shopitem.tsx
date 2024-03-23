@@ -1,6 +1,22 @@
-import PropTypes from "prop-types";
+import React from "react";
 
-const Shopitem = ({ item }) => {
+type ClothesItem = {
+  name:string;
+  img: any;
+  gender: string;
+  price: string;
+  type: string;
+  brand: string;
+  color?: string;
+  description: string;
+};
+
+type ShopitemPropsType = {
+  item: ClothesItem
+}
+
+
+const Shopitem = ({ item } : ShopitemPropsType) => {
   return (
     <div className="group bg-black w-80 text-center font-futura ">
       <img
@@ -27,10 +43,4 @@ const Shopitem = ({ item }) => {
     </div>
   );
 };
-
-Shopitem.propTypes = {
-  item: PropTypes.object,
-  gender: PropTypes.string,
-};
-
 export default Shopitem;
