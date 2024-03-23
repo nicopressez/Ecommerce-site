@@ -1,29 +1,48 @@
+type ClothesItem = {
+  name: string;
+  img: any; 
+  gender: string;
+  price: string;
+  type: string;
+  brand: string;
+  color: string;
+  description: string;
+  size?: string; 
+  quantity?: number;
+};
+
+type GenderItems = ClothesItem[];
+
+type ClothesType = {
+  women: GenderItems;
+  men: GenderItems;
+};
+
 export const sort = (
-  sex,
-  sorting,
-  setsorting,
-  typeValue,
-  brandValue,
-  colorValue,
+  sex: string,
+  sorting: ClothesType,
+  setsorting: React.Dispatch<React.SetStateAction<ClothesType>>,
+  typeValue: string,
+  brandValue: string,
+  colorValue: string,
 ) => {
-  let gender;
+  let gender:string = "";
   if (sex === "WOMEN'S") gender = "women";
   else if (sex === "MEN'S") gender = "men";
   let newSorting = sorting;
 
-  console.log(typeValue, colorValue);
-  if (typeValue != "all") {
-    newSorting = {
+  if (typeValue !== "all") {
+    newSorting = {...newSorting,
       [gender]: newSorting[gender].filter((item) => item.type === typeValue),
     };
   }
-  if (colorValue != "all") {
-    newSorting = {
+  if (colorValue !== "all") {
+    newSorting = {...newSorting,
       [gender]: newSorting[gender].filter((item) => item.color === colorValue),
     };
   }
-  if (brandValue != "all") {
-    newSorting = {
+  if (brandValue !== "all") {
+    newSorting = {...newSorting,
       [gender]: newSorting[gender].filter((item) => item.brand === brandValue),
     };
   }
