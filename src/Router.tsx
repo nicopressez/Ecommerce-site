@@ -1,14 +1,15 @@
 import "./index.css";
+import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Homepage from "./components/Homepage.tsx";
-import Men from "./components/Men.tsx";
-import Women from "./components/Women.tsx";
-import App from "./App.tsx";
-import { clothes } from "./components/utils/clothes.ts";
-import Item from "./components/Itempage.tsx";
-import Checkout from "./components/Checkout.tsx";
-import Search from "./components/Search.tsx";
-import About from "./components/About.tsx";
+import Homepage from "./components/Homepage";
+import Men from "./components/Men";
+import Women from "./components/Women";
+import App from "./App";
+import { clothes } from "./components/utils/clothes";
+import Item from "./components/Itempage";
+import Checkout from "./components/Checkout";
+import Search from "./components/Search";
+import About from "./components/About";
 
 const Router = () => {
   const router = createBrowserRouter([
