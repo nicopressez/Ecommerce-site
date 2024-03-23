@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import backgroundVideo2 from "../assets/videos/backgroundVideo2.mp4";
-import { useEffect, useState } from "react";
+import React,{ useEffect, useState } from "react";
 
 const Homepage = () => {
   const [loaded, setLoaded] = useState(false);

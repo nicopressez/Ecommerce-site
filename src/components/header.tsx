@@ -6,16 +6,18 @@ import {
 import githubLogo from "../assets/images/github.png";
 import { Link, NavLink } from "react-router-dom";
 import CartModal from "./Cart";
-import { useContext } from "react";
+import React,{ useContext } from "react";
 import { CartContext } from "./CartContext";
 
 const Header = () => {
   // Add black background to header on scroll
   window.onscroll = () => {
     const navBar = document.getElementById("nav");
+    if(navBar) {
     if (document.documentElement.scrollTop >= 30)
       navBar.classList.add("bg-black");
     else navBar.classList.remove("bg-black");
+  }
   };
 
   const { products, showCart, setShowCart } = useContext(CartContext);

@@ -1,11 +1,11 @@
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Homepage from "./components/Homepage.jsx";
+import Homepage from "./components/Homepage.tsx";
 import Men from "./components/Men.jsx";
 import Women from "./components/Women.jsx";
 import App from "./App.jsx";
 import { clothes } from "./components/utils/clothes.ts";
-import Item from "./components/Itempage.jsx";
+import Item from "./components/Itempage.tsx";
 import Checkout from "./components/Checkout.tsx";
 import Search from "./components/Search.jsx";
 import About from "./components/About.tsx";

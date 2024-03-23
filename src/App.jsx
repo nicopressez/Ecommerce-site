@@ -1,4 +1,4 @@
-import Header from "./components/header";
+import Header from "./components/header.tsx";
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { CartContext } from "./components/CartContext";

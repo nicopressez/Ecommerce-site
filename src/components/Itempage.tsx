@@ -1,9 +1,28 @@
 import { useParams } from "react-router-dom";
-import { PropTypes } from "prop-types";
-import { useContext, useState } from "react";
+import React,{ useContext, useState } from "react";
 import { CartContext } from "./CartContext";
 
-const Item = ({ items }) => {
+type ClothesItem = {
+  name:string;
+  img: any;
+  gender: string;
+  price: string;
+  type: string;
+  brand: string;
+  color?: string;
+  description: string;
+};
+
+type GenderType = {
+  women: ClothesItem[];
+  men: ClothesItem[];
+};
+
+type ItemProps = {
+  items:  GenderType
+}
+
+const Item = ({ items } : ItemProps) => {
   const [size, setSize] = useState("");
 
   const { addItem, setShowCart } = useContext(CartContext);
@@ -11,7 +30,7 @@ const Item = ({ items }) => {
   // Find current item in clothes to display its info
   const { title, gender } = useParams();
 
-  const currentItem = items[gender].find((item) => item.name === title);
+  const currentItem = gender && items[gender].find((item : ClothesItem) => item.name === title);
   const sizes = () => {
     if (currentItem.type !== "Accessories")
       return (
@@ -58,10 +77,6 @@ const Item = ({ items }) => {
       </div>
     </div>
   );
-};
-
-Item.propTypes = {
-  items: PropTypes.object,
 };
 
 export default Item;
