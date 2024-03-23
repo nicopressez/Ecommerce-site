@@ -10,7 +10,6 @@ type ClothesItem = {
   color: string;
   description: string;
   size?: string; 
-  quantity?: number;
 };
 
 type GenderItems = ClothesItem[];

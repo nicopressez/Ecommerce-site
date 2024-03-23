@@ -1,10 +1,36 @@
-import Header from "./components/header.tsx";
+import Header from "./components/header.js";
 import { Outlet, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { CartContext } from "./components/CartContext";
+import React,{ useEffect, useState } from "react";
+import { CartContext } from "./components/CartContext.js";
+
+type ShopItem = {
+  name: string;
+  img: any; 
+  gender: string;
+  price: string;
+  type: string;
+  brand: string;
+  color: string;
+  description: string;
+  size?: string; 
+  quantity?: number;
+};
+
+type CartItem = {
+  name: string;
+  img: any; 
+  gender: string;
+  price: string;
+  type: string;
+  brand: string;
+  color: string;
+  description: string;
+  size?: string; 
+  quantity: number;
+};
 
 export default function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState<CartItem[]>([]);
   const [products, setProducts] = useState(0);
   const [subtotal, setSubtotal] = useState(0);
   const [showCart, setShowCart] = useState(false);
@@ -15,7 +41,7 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location]);
 
-  const addItem = (item, size) => {
+  const addItem = (item:ShopItem, size: string) => {
     if (item.type !== "Accessories" && !size) return;
     const itemExists = cart.filter((element) => element.name === item.name);
     const exactItem = itemExists.find((element) => element.size === size);
@@ -27,10 +53,13 @@ export default function App() {
     }
     // If element exists and size is same, just add 1 quantity
     else if (exactItem) {
-      cart
-        .filter((element) => element.name === item.name)
-        .find((element) => element.size === size).quantity += 1;
-      setSubtotal(Number((subtotal + +item.price).toFixed(2)));
+      const foundItem = cart.find((element) => element.name === item.name && element.size === size);
+      if (foundItem) {
+        if (foundItem.quantity !== undefined) {
+          foundItem.quantity += 1;
+          setSubtotal(Number((subtotal + +item.price).toFixed(2)));
+        }
+      }
     }
     // If element exists and size is different, create
     else {
@@ -41,19 +70,18 @@ export default function App() {
     setCart(cart);
   };
 
-  const removeItem = (item) => {
+  const removeItem = (item: CartItem) => {
     const index = cart.findIndex(
       (element) => element.name === item.name && element.size === item.size,
     );
     cart.splice(index, 1);
-    setSubtotal(
-      Number((subtotal - (item.price * item.quantity).toFixed(2)).toFixed(2)),
-    );
+    const removedSubtotal = parseFloat(item.price) * item.quantity;
+    setSubtotal(Number((subtotal - removedSubtotal).toFixed(2)));
     setProducts(products - 1);
     setCart(cart);
   };
 
-  const editQuantity = (item, newQuantity) => {
+  const editQuantity = (item: CartItem, newQuantity: number) => {
     const index = cart.findIndex(
       (element) => element.name === item.name && element.size === item.size,
     );
@@ -63,8 +91,8 @@ export default function App() {
       Number(
         (
           subtotal -
-          item.price * previousQuantity +
-          item.price * newQuantity
+          +item.price * previousQuantity +
+          +item.price * newQuantity
         ).toFixed(2),
       ),
     );

@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./components/Homepage.tsx";
 import Men from "./components/Men.tsx";
 import Women from "./components/Women.tsx";
-import App from "./App.jsx";
+import App from "./App.tsx";
 import { clothes } from "./components/utils/clothes.ts";
 import Item from "./components/Itempage.tsx";
 import Checkout from "./components/Checkout.tsx";
