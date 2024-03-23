@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { sort, sortPriceHighLow, sortPriceLowHigh } from "./utils/sorting";
-import ColorOptions from "./ColorOptions";
+import ColorOptions from "./ColorOptions.tsx";
 import { clothes } from "./utils/clothes";
 import BrandOptions from "./BrandOptions.tsx";
 import TypeOptions from "./TypeOptions";

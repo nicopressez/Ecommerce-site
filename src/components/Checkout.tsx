@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import React,{ useContext, useState } from "react";
 import checkoutImg from "../assets/images/hero.jpg";
 import { CartContext } from "./CartContext";
 
@@ -52,7 +52,7 @@ const Checkout = () => {
                   Quantity:
                   <select
                     className="  bg-black focus:outline-none"
-                    onChange={(e) => editQuantity(item, e.target.value)}
+                    onChange={(e) => editQuantity(item, +e.target.value)}
                   >
                     <option selected disabled>
                       {item.quantity}
